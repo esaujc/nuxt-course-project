@@ -31,16 +31,40 @@
 
 <script>
 export default {
+  props: {
+    name: {
+      type: String,
+      default: ''
+      },
+    description:{
+      type: String,
+      default: ''
+    },
+      category: {
+      type: String,
+      default: ''
+    },
+    slug: {
+      type: String,
+      default: ''
+    },
+    likes: {
+      type: Number,
+      default: 0
+    }
+  },
   data: () => ({
-     name: 'Restaurant Mr Pacus.',
-     description: 'Restaurant description',
-     likes: 0,
-     category: 'burger',
-     slug: 'restaurant-name'
+    //  name: 'Restaurant Mr Pacus.',
+    //  description: 'Restaurant description',
+    // likes: 0,
+    //  category: 'burger',
+    //  slug: 'restaurant-name'
   }),
   methods: {
     updateLikes () {
-      this.likes++;
+      this.$emit('onLikeButton')
+      // this.$emit('onLikeButton', payload)
+      //this.likes++;
     }
   }
 }
